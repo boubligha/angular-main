@@ -1,0 +1,23 @@
+<form (ngSubmit)="register()">
+  <div class="input-box">
+    <input type="text" [(ngModel)]="firstName" #firstNameRef="ngModel" name="firstName" required>
+    <label>First Name</label>
+    <div *ngIf="firstNameRef.invalid && firstNameRef.touched" class="error">
+      First name is required.
+    </div>
+  </div>
+  <div class="input-box">
+    <input type="text" [(ngModel)]="lastName" #lastNameRef="ngModel" name="lastName" required>
+    <label>Last Name</label>
+    <div *ngIf="lastNameRef.invalid && lastNameRef.touched" class="error">
+      Last name is required.
+    </div>
+  </div>
+  <div class="input-box">
+    <input type="email" [(ngModel)]="email" #emailRef="ngModel" name="email" required>
+    <label>Email</label>
+    <div *ngIf="emailRef.invalid && emailRef.touched" class="error">
+      Valid email is required.
+    </div>
+  </div>
+  </form>

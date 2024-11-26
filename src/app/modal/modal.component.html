@@ -1,0 +1,25 @@
+<div class="modal" *ngIf="isOpen">
+    <div class="modal-content">
+
+      <h2>Quiz: {{ questions[0]?.category }}</h2>
+      <button class="close-button" (click)="closeModal()">×</button>
+      <div class="modal-body">
+        <ul>
+          <li *ngFor="let question of questions; index as i">
+            <p>{{ i + 1 }}. {{ question.question }}</p>
+            <ul *ngIf="question.type === 'multiple'">
+              <li *ngFor="let option of question.incorrect_answers">
+                <input type="radio" name="question-{{ i }}" id="option-{{ i }}{{ option.charAt(0) }}">
+                <label for="option-{{ i }}{{ option.charAt(0) }}">{{ option }}</label>
+              </li>
+              <li>
+                <input type="radio" name="question-{{ i }}" id="option-{{ i }}C">
+                <label for="option-{{ i }}C">{{ question.correct_answer }}</label>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <button (click)="submitQuiz()">Submit</button>
+    </div>
+  </div>
