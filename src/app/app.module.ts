@@ -3,9 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router'; // For routing
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // Combine FormsModule and ReactiveFormsModule
-import { AppRoutingModule } from './app-routing.module'; // Your routing module
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; // For animations
 
 // Angular Material modules
 import { MatDialogModule } from '@angular/material/dialog';
