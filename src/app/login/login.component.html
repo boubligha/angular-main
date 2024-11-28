@@ -1,80 +1,51 @@
-
-  <div class="robot-speech" >
-    <p>Hello! Welcome to the Quiz App. Here, you can test your languages (French, English...) and scientific subjects like Mathematics and more.</p>
-    <button (click)="startRecognition()">Start Speech Recognition</button>
+<div class="robot-speech">
+  <p>Hello! Welcome to the Quiz App. Test your knowledge in languages (French, English...) and scientific subjects like Mathematics and more.</p>
+  <button (click)="startRecognition()">Start Speech Recognition</button>
 </div>
-<div class="container">
-    <div class="login-box">
-        <h2>Login</h2>
-        <form (ngSubmit)="onLogin()">
-            <div class="input-box">  <input type="text" id="username" [(ngModel)]="loginData.username" name="username" required />
-                <label>Email</label>
-            </div>
-            <div class="input-box">
-                <input type="password" id="password" [(ngModel)]="loginData.password" name="password" required />
-                <label>Password</label>
-            </div>
-            <div class="forgot-pass">
-                <a href="#">Forgot your password?</a>
-            </div>
-            <button type="submit" class="btn">Se connecter</button>
-            
-            <div class="signup-link">
-                <a routerLink="/register">inscription ici</a>
-              </div>
-             
-        </form>
+
+<div class="main">
+  <div class="navbar">
+    <div class="icon">
+      <h2 class="logo">Quiz Master</h2>
     </div>
+    <div class="menu">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">QUIZZES</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+      </ul>
     </div>
-    <span style="--i:0;"></span>
-      <span style="--i:1;"></span>
-      <span style="--i:2;"></span>
-      <span style="--i:3;"></span>
-      <span style="--i:4;"></span>
-      <span style="--i:5;"></span>
-      <span style="--i:6;"></span>
-      <span style="--i:7;"></span>
-      <span style="--i:8;"></span>
-      <span style="--i:9;"></span>
-      <span style="--i:10;"></span>
-      <span style="--i:11;"></span>
-      <span style="--i:12;"></span>
-      <span style="--i:13;"></span>
-      <span style="--i:14;"></span>
-      <span style="--i:15;"></span>
-      <span style="--i:16;"></span>
-      <span style="--i:17;"></span>
-      <span style="--i:18;"></span>
-      <span style="--i:19;"></span>
-      <span style="--i:20;"></span>
-      <span style="--i:21;"></span>
-      <span style="--i:22;"></span>
-      <span style="--i:23;"></span>
-      <span style="--i:24;"></span>
-      <span style="--i:25;"></span>
-      <span style="--i:26;"></span>
-      <span style="--i:27;"></span>
-      <span style="--i:28;"></span>
-      <span style="--i:29;"></span>
-      <span style="--i:30;"></span>
-      <span style="--i:31;"></span>
-      <span style="--i:32;"></span>
-      <span style="--i:33;"></span>
-      <span style="--i:34;"></span>
-      <span style="--i:35;"></span>
-      <span style="--i:36;"></span>
-      <span style="--i:37;"></span>
-      <span style="--i:38;"></span>
-      <span style="--i:39;"></span>
-      <span style="--i:40;"></span>
-      <span style="--i:41;"></span>
-      <span style="--i:42;"></span>
-      <span style="--i:43;"></span>
-      <span style="--i:44;"></span>
-      <span style="--i:45;"></span>
-      <span style="--i:46;"></span>
-      <span style="--i:47;"></span>
-      <span style="--i:48;"></span>
-      <span style="--i:49;"></span>
-        <!-- Reduced code with ngFor
-  <span *ngFor="let i of [].constructor(50); let idx = index" [style.--i]="idx"></span>-->
+    <div class="search">
+      <input class="srch" type="search" placeholder="Type to search">
+      <button class="btn">Search</button>
+    </div>
+  </div>
+
+  <div class="login-box">
+    <h2>Login</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div class="input-box">
+        <input type="email" name="email" [(ngModel)]="email" required>
+        <label>Email</label>
+        <div *ngIf="loginForm.submitted && loginForm.controls['email']?.invalid">
+          <small class="error">Email is required and should be valid.</small>
+        </div>
+      </div>
+      <div class="input-box">
+        <input type="password" name="password" [(ngModel)]="password" required>
+        <label>Password</label>
+        <div *ngIf="loginForm.submitted && loginForm.controls['password']?.invalid">
+          <small class="error">Password is required.</small>
+        </div>
+      </div>
+      <div class="forgot-pass">
+        <a href="#">Forgot your password?</a>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="signup-link">
+        <a (click)="navigateToRegister()">Signup</a>
+      </div>
+    </form>
+  </div>
+</div>

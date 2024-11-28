@@ -1,79 +1,52 @@
-<div class="settings-container">
-    <h4 class="font-weight-bold py-3 mb-4">Account Settings</h4>
-    <div class="settings-wrapper">
-        <!-- Sidebar Navigation -->
-        <nav class="settings-sidebar">
-            <ul class="settings-nav">
-                <li><a href="#account-general" class="active" routerLink="/modefierPasswdComponent"><i class="fas fa-user"></i> General</a></li>
-                <li><a href="javascript:void(0)" (click)="openPasswordDialog()"><i class="fas fa-key"></i> Change Password</a></li>
-                <li><a href="#account-info"><i class="fas fa-info-circle"></i> Info</a></li>
-                <li><a href="#account-social-links"><i class="fas fa-share-alt"></i> Social Links</a></li>
-                <li><a href="#account-connections"><i class="fas fa-link"></i> Connections</a></li>
-                <li><a href="#account-notifications"><i class="fas fa-bell"></i> Notifications</a></li>
-            </ul>
-        </nav>
+<div class="settings-container">  
+    <h4 class="title">Account Settings</h4>  
+    <div class="settings-wrapper">  
+        <!-- Sidebar Navigation -->  
+        <nav class="settings-sidebar">  
+            <ul class="settings-nav">  
+                <li><a href="#general" class="active"><i class="fas fa-user"></i> General</a></li>  
+                <li><a href="javascript:void(0)" (click)="openPasswordDialog()"><i class="fas fa-key"></i> Change Password</a></li>  
+                <li><a href="#info"><i class="fas fa-info-circle"></i> Info</a></li>  
+                <li><a href="#social-links"><i class="fas fa-share-alt"></i> Social Links</a></li>  
+                <li><a href="#connections"><i class="fas fa-link"></i> Connections</a></li>
+                <li><a href="javascript:void(0)" (click)="openNotifications()"><i class="fas fa-key"></i> Notifications</a></li>
+            </ul>  
+        </nav>  
 
-        <!-- Main Content -->
-        <div class="settings-content">
-            <!-- General Section -->
-            <div id="account-general" class="settings-section active">
-                <div class="card">
-                    <div class="card-header">General</div>
-                    <div class="card-body">
-                        <div class="profile-picture d-flex align-items-center">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="rounded-circle">
-                            <div class="ml-3">
-                                <label class="btn btn-primary btn-sm">Upload New Photo
-                                    <input type="file" hidden>
-                                </label>
-                                <button type="button" class="btn btn-outline-secondary btn-sm">Reset</button>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" class="form-control" value="nmaxwell">
-                        </div>
-                        <div class="form-group">
-                            <label>Name</label>
-                            <input type="text" class="form-control" value="Nelle Maxwell">
-                        </div>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" class="form-control" value="nmaxwell@mail.com">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Change Password Section -->
-            <div id="account-change-password" class="settings-section">
-                <div class="card">
-                    <div class="card-header">Change Password</div>
-                    <div class="card-body">
-                        <div class="form-group">
-                            <label>Current Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>New Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                        <div class="form-group">
-                            <label>Repeat New Password</label>
-                            <input type="password" class="form-control">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Additional Sections Here -->
-        </div>
-    </div>
-
-    <!-- Save/Cancel Buttons -->
-    <div class="text-right mt-3">
-        <button type="button" class="btn btn-success">Save Changes</button>
-        <button type="button" class="btn btn-secondary">Cancel</button>
-    </div>
-</div>
+        <!-- Main Content -->  
+        <div class="settings-content">  
+            <div id="general" class="settings-section active">  
+                <div class="card">  
+                    <div class="card-header">General</div>  
+                    <div class="card-body">  
+                        <div class="profile-picture">  
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="Avatar" class="rounded-circle">  
+                            <div>  
+                                <label class="upload-btn">Upload Photo  
+                                    <input type="file" hidden>  
+                                </label>  
+                                <button class="reset-btn">Reset</button>  
+                            </div>  
+                        </div>  
+                        <div class="form-group">  
+                            <label>Username</label>  
+                            <input type="text" placeholder="Enter your username">  
+                        </div>  
+                        <div class="form-group">  
+                            <label>Name</label>  
+                            <input type="text" placeholder="Enter your name">  
+                        </div>  
+                        <div class="form-group">  
+                            <label>Email</label>  
+                            <input type="email" placeholder="Enter your email">  
+                        </div>  
+                    </div>  
+                </div>  
+            </div>  
+        </div>  
+    </div>  
+    <div class="action-buttons">  
+        <button class="btn save-btn">Save Changes</button>  
+        <button class="btn cancel-btn">Cancel</button>  
+    </div>  
+</div>  

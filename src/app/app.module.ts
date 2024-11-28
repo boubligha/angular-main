@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
-import { RouterModule } from '@angular/router'; // For routing
+import { RouterModule } from '@angular/router'; 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; 
+import { AppRoutingModule } from './app-routing.module'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 
 // Angular Material modules
 import { MatDialogModule } from '@angular/material/dialog';
@@ -10,6 +13,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list'; 
+import { MatSlideToggleModule } from '@angular/material/slide-toggle'; // Import MatSlideToggleModule
 
 // Import your components
 import { LoginComponent } from './login/login.component';
@@ -18,6 +23,7 @@ import { SecretComponent } from './secret/secret.component';
 import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ModefierPasswdComponent } from './sous_composants/modefier-passwd/modefier-passwd.component';
+import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
   declarations: [
@@ -26,22 +32,25 @@ import { ModefierPasswdComponent } from './sous_composants/modefier-passwd/modef
     SecretComponent,
     ModalComponent,
     ProfileComponent,
-    ModefierPasswdComponent, // Declare your password modification component here
+    ModefierPasswdComponent,
+    NotificationComponent,
   ],
   imports: [
     BrowserModule,
-    CommonModule, // Necessary for ngIf and ngFor
-    AppRoutingModule, // Your routing module
-    RouterModule, // Enable routing in your application
-    FormsModule, // For template-driven forms
-    ReactiveFormsModule, // For reactive forms
-    BrowserAnimationsModule, // Required for Angular Material
-    MatDialogModule, // Dialog functionality
-    MatFormFieldModule, // Material form fields
-    MatInputModule, // Material inputs
-    MatButtonModule, // Material buttons
-    MatIconModule, // Material icons
-    RegisterComponent
+    CommonModule,
+    AppRoutingModule,
+    RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatListModule,
+    MatSlideToggleModule,
+    RegisterComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
