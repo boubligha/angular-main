@@ -1,21 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'] 
+  styleUrls: ['./modal.component.css'],
 })
 export class ModalComponent implements OnInit {
-  @Input() isOpen: boolean = false; // Indique si le modal est ouvert
-  @Input() questions: any[] = []; // Tableau des questions
+  constructor(public dialogRef: MatDialogRef<ModalComponent>) {}
 
-  constructor() { }
+  ngOnInit(): void {
+    throw new Error('Method not implemented.');
+  }
 
-  ngOnInit() { }
-
- closeModal() {
-  this.isOpen = false;
-}
-  submitQuiz(){
+  onClose(): void {
+    this.dialogRef.close();
   }
 }

@@ -1,25 +1,27 @@
-<div class="modal" *ngIf="isOpen">
-    <div class="modal-content">
+<h2 mat-dialog-title>What is the answer to this question?</h2>
 
-      <h2>Quiz: {{ questions[0]?.category }}</h2>
-      <button class="close-button" (click)="closeModal()">×</button>
-      <div class="modal-body">
-        <ul>
-          <li *ngFor="let question of questions; index as i">
-            <p>{{ i + 1 }}. {{ question.question }}</p>
-            <ul *ngIf="question.type === 'multiple'">
-              <li *ngFor="let option of question.incorrect_answers">
-                <input type="radio" name="question-{{ i }}" id="option-{{ i }}{{ option.charAt(0) }}">
-                <label for="option-{{ i }}{{ option.charAt(0) }}">{{ option }}</label>
-              </li>
-              <li>
-                <input type="radio" name="question-{{ i }}" id="option-{{ i }}C">
-                <label for="option-{{ i }}C">{{ question.correct_answer }}</label>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-      <button (click)="submitQuiz()">Submit</button>
-    </div>
+<div mat-dialog-content>
+  <div class="choice-container">
+    <p class="choice-prefix">A</p>
+    <p class="choice-text" data-number="1">Choice 1</p>
   </div>
+  <div class="choice-container">
+    <p class="choice-prefix">B</p>
+    <p class="choice-text" data-number="2">Choice 2</p>
+  </div>
+  <div class="choice-container">
+    <p class="choice-prefix">C</p>
+    <p class="choice-text" data-number="3">Choice 3</p>
+  </div>
+  <div class="choice-container">
+    <p class="choice-prefix">D</p>
+    <p class="choice-text" data-number="4">Choice 4</p>
+  </div>
+  <div class="micro-icon-container">
+    <mat-icon>mic</mat-icon> <!-- This is the microphone icon -->
+  </div>
+</div>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="onClose()">Close</button>
+</div>
