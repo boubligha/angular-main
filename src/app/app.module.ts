@@ -26,7 +26,8 @@ import { ModefierPasswdComponent } from './sous_composants/modefier-passwd/modef
 import { NotificationComponent } from './notification/notification.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
-
+import { AboutComponent } from './about/about.component';
+import { NgChartsModule } from 'ng2-charts'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -37,6 +38,7 @@ import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog
     ModefierPasswdComponent,
     NotificationComponent,
     MotivationDialogComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,7 @@ import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog
     MatListModule,
     MatSlideToggleModule,
     RegisterComponent,
+    NgChartsModule,
   ],
   providers: [
     provideAnimationsAsync()

@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SecretComponent } from './secret/secret.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AboutComponent } from './about/about.component';
+
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -11,6 +13,8 @@ const routes: Routes = [
   { path: 'secret', component: SecretComponent },
   {path:'profile', component:ProfileComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Route par défaut
+  {path:'about', component:AboutComponent},//contact
+  {path:'about', component:AboutComponent},
 ];
 
 @NgModule({

@@ -23,10 +23,13 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.11",
+    "@swimlane/ngx-charts": "^21.0.0",
     "angularapp": "file:",
     "axios": "^1.7.7",
+    "chart.js": "^3.9.1",
     "express": "^4.18.2",
     "html2canvas": "^1.4.1",
+    "ng2-charts": "^3.1.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.10"
