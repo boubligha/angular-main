@@ -1,0 +1,24 @@
+.motivation-card {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+  }
+  
+  .motivation-card h2 {
+    color: #4caf50;
+  }
+  
+  .motivation-card .actions {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .motivation-card .emoji {
+    font-size: 1.5em;
+  }
+  

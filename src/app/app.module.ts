@@ -24,6 +24,8 @@ import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ModefierPasswdComponent } from './sous_composants/modefier-passwd/modefier-passwd.component';
 import { NotificationComponent } from './notification/notification.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,7 @@ import { NotificationComponent } from './notification/notification.component';
     ProfileComponent,
     ModefierPasswdComponent,
     NotificationComponent,
+    MotivationDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +55,9 @@ import { NotificationComponent } from './notification/notification.component';
     MatSlideToggleModule,
     RegisterComponent,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

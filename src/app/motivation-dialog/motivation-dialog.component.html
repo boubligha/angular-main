@@ -1,0 +1,18 @@
+<mat-dialog-content>
+    <div #motivationCard class="motivation-card">
+      <!-- Bouton de fermeture -->
+      <button mat-icon-button class="close-button" (click)="closeDialog()">
+        ✖
+      </button>
+  
+      <h2>Motivation Card</h2>
+      <p><strong>Name:</strong> Salma</p>
+      <p><strong>Surname:</strong> Ezahraoui</p>
+      <p><strong>Score:</strong> 8/10</p>
+      <div class="actions">
+        <button mat-button (click)="downloadCard()">📥 Download</button>
+        <span class="emoji">😊</span>
+      </div>
+    </div>
+  </mat-dialog-content>
+  

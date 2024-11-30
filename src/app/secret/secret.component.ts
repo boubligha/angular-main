@@ -3,6 +3,9 @@ import axios from 'axios';
 import { MatDialog } from '@angular/material/dialog'; // Import MatDialog
 import { ModalComponent } from '../modal/modal.component';
 
+import { MotivationDialogComponent } from '../motivation-dialog/motivation-dialog.component';
+
+
 interface Quiz {
   id: number;
   title: string;
@@ -58,5 +61,9 @@ export class SecretComponent implements OnInit {
     width: '600px',
   });
 }
-
+openMotivationCard() {
+  this.dialog.open(MotivationDialogComponent, {
+    width: '400px'
+  });
+}
 }
