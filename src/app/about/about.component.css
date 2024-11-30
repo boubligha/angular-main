@@ -1,22 +1,125 @@
+/* Global styling for About Page */
 .about-container {
+    max-width: 1200px;
+    margin: 50px auto;
     padding: 20px;
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .about-container h1 {
-    font-size: 2em;
+    font-size: 2.5em;
     color: #333;
+    text-align: center;
+    margin-bottom: 20px;
   }
   
+  .about-container p {
+    font-size: 1.2em;
+    color: #666;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Styling for the chart section */
+  .about-container canvas {
+    display: block;
+    
+    max-width: 80%; /* Ensure the chart is responsive */
+  }
+  
+  /* List of quiz categories */
   .about-container ul {
     list-style-type: none;
     padding: 0;
+    margin: 0;
   }
   
   .about-container ul li {
+    font-size: 1.1em;
+    color: #444;
+    margin: 10px 0;
+  }
+  
+  .about-container ul li::before {
+    content: '✔️';
+    color: #28a745;
+    margin-right: 10px;
+  }
+  
+  /* Mission section */
+  .mission {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-top: 40px;
+    border-radius: 8px;
+  }
+  
+  .mission h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .mission p {
     font-size: 1.2em;
-    margin: 5px 0;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Contact section */
+  .contact-info {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .contact-info h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .contact-info p {
+    font-size: 1.2em;
+    color: #555;
+  }
+  
+  .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive styling for smaller screens */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 15px;
+    }
+  
+    .about-container h1 {
+      font-size: 2em;
+    }
+  
+    .about-container p {
+      font-size: 1.1em;
+    }
+  
+    .about-container ul li {
+      font-size: 1em;
+    }
+  
+    .mission h2,
+    .contact-info h2 {
+      font-size: 1.8em;
+    }
+  
+    .mission p,
+    .contact-info p {
+      font-size: 1em;
+    }
   }
   

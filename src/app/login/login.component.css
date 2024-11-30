@@ -1,422 +1,211 @@
-/* General Styles */
+/* Style global pour la page */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-  }
-  
-  .main {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: #6a11cb;
-  }
-  
-  .icon h2 {
-    color: white;
-    font-size: 24px;
-  }
-  
-  .menu ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    margin: 0 10px;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-  }
-  
-  .srch {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 5px;
-  }
-  
-  .search .btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background: white;
-    color: #6a11cb;
-    cursor: pointer;
-  }
-  
-  /* Content Styles */
-  .content h1 {
-    font-size: 36px;
-    color: #444;
-  }
-  
-  .content h1 span {
-    color: #6a11cb;
-  }
-  
-  .par {
-    font-size: 18px;
-    color: #666;
-  }
-  
-  .cn {
-    background: #6a11cb;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-  }
-  
-  /* Login Box Styles */
-  .login-box {
-    width: 300px;
-    padding: 40px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-  }
-  
-  .login-box h2 {
-    margin-bottom: 30px;
-    color: #6a11cb;
-  }
-  
-  .input-box {
-    position: relative;
-    margin-bottom: 30px;
-  }
-  
-  .input-box input {
-    width: 100%;
-    padding: 10px;
-    background: #f4f4f4;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-  }
-  
-  .input-box label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px 0;
-    color: #666;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  
-  .input-box input:focus ~ label,
-  .input-box input:valid ~ label {
-    top: -20px;
-    left: 10px;
-    color: #6a11cb;
-    font-size: 12px;
-  }
-  
-  .forgot-pass {
-    text-align: right;
-  }
-  
-  .forgot-pass a {
-    color: #6a11cb;
-    text-decoration: none;
-  }
-  
-  .btn {
-    width: 100%;
-    background: #6a11cb;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-  }
-  
-  .signup-link a {
-    color: #6a11cb;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-  }
-  /* Style for the robot's speech bubble */
-.robot-speech {
-    position: absolute;
-    top: 20px; /* Position it near the top left corner */
-    left: 20px; /* Adjust this to move the speech bubble near the robot */
-    max-width: 300px;
-    background: #fff;
-    color: #1f293a;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 0.9em;
-    opacity: 0; /* Start hidden */
-    animation: showSpeech 3s ease forwards;
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
 }
 
-/* Animation to make the speech appear */
-@keyframes showSpeech {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.robot-speech {
+  background-color: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  margin: 20px 0;
 }
-/* General Styles */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-  }
-  
-  .main {
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #6a11cb;
-  }
-  
-  .icon h2 {
-    color: white;
-    font-size: 24px;
-  }
-  
-  .menu ul {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .menu li {
-    margin: 0 15px;
-  }
-  
-  .menu a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-  }
-  
-  .search {
-    display: flex;
-    align-items: center;
-  }
-  
-  .srch {
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
-    margin-right: 5px;
-  }
-  
-  .search .btn {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: white;
-    color: #6a11cb;
-    cursor: pointer;
-  }
-  
-  /* Content Styles */
-  .content {
-    padding: 50px 0;
-  }
-  
-  .content h1 {
-    font-size: 42px;
-    color: #444;
-    margin-bottom: 20px;
-  }
-  
-  .content h1 span {
-    color: #6a11cb;
-  }
-  
-  .par {
-    font-size: 18px;
-    color: #666;
-    margin-bottom: 40px;
-  }
-  
-  .cn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #6a11cb;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .cn:hover {
-    background-color: #2575fc;
-  }
-  
-  /* Login Box Styles */
-  .login-box {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    margin: 20px auto;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: left;
-  }
-  
-  .login-box h2 {
-    margin-bottom: 30px;
-    color: #6a11cb;
-  }
-  
-  .input-box {
-    position: relative;
-    margin-bottom: 30px;
-  }
-  
-  .input-box input {
-    width: 100%;
-    padding: 10px;
-    background: #f4f4f4;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-  }
-  
-  .input-box label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px 0;
-    color: #666;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  
-  .input-box input:focus ~ label,
-  .input-box input:valid ~ label {
-    top: -20px;
-    left: 10px;
-    color: #6a11cb;
-    font-size: 12px;
-  }
-  
-  .forgot-pass {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  
-  .forgot-pass a {
-    color: #6a11cb;
-    text-decoration: none;
-  }
-  
-  .btn {
-    width: 100%;
-    background-color: #6a11cb;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #2575fc;
-  }
-  
-  .signup-link a {
-    color: #6a11cb;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    margin-top: 20px;
-  }
-  #hud {
+
+.robot-speech p {
+  font-size: 18px;
+}
+
+.robot-speech button {
+  padding: 10px 20px;
+  background-color: #ffca28;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.robot-speech button:hover {
+  background-color: #ffb300;
+}
+
+/* Main structure */
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Navbar styling */
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 10px;
+  background-color: #007bff;
+  padding: 10px 20px;
   color: white;
 }
 
-#hud-item {
-  margin: 0 10px;
+.navbar .icon .logo {
+  font-size: 1.5em;
 }
 
-#progressBar {
-  width: 100%;
-  background-color: #555;
-  height: 10px;
+.navbar .menu ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.navbar .menu li {
+  margin: 0 15px;
+}
+
+.navbar .menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.1em;
+}
+
+.navbar .menu a:hover {
+  color: #ffca28;
+}
+
+/* Search bar styling */
+.navbar .search {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .srch {
+  padding: 8px;
+  margin-right: 10px;
+  font-size: 1em;
   border-radius: 5px;
-  overflow: hidden;
+  border: 1px solid #ccc;
 }
 
-#progressBarFull {
-  height: 100%;
-  background-color: green;
+.navbar .btn {
+  padding: 10px 20px;
+  background-color: #28a745;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1em;
 }
 
-.hud-prefix {
+.navbar .btn:hover {
+  background-color: #218838;
+}
+
+/* Login box styling */
+.login-box {
+  background-color: white;
+  max-width: 400px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.input-box label {
+  position: absolute;
+  top: -10px;
+  left: 10px;
   font-size: 14px;
-  margin-bottom: 5px;
-}
-
-.hud-main-text {
-  font-size: 24px;
+  color: #007bff;
   font-weight: bold;
 }
 
-#micro-icon {
-  width: 30px;
-  height: auto;
+.forgot-pass {
+  text-align: right;
+  margin-bottom: 10px;
 }
 
+.forgot-pass a {
+  font-size: 14px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-pass a:hover {
+  text-decoration: underline;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.signup-link a {
+  color: #007bff;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.signup-link a:hover {
+  text-decoration: underline;
+}
+
+/* Button styling for login */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.1em;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Error message styling */
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .navbar .menu ul {
+    flex-direction: column;
+  }
+
+  .navbar .menu li {
+    margin: 10px 0;
+  }
+
+  .login-box {
+    width: 100%;
+    padding: 15px;
+  }
+}
