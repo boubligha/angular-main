@@ -20,7 +20,9 @@ export class SecretComponent implements OnInit {
   fetchedQuestions: any[] = [];
   loading: boolean = false;
 
-  constructor(private dialog: MatDialog) {} // Inject MatDialog service
+  constructor(private dialog: MatDialog) {
+  
+  } // Inject MatDialog service
 
   ngOnInit() {
     this.fetchCategories();
@@ -47,29 +49,14 @@ export class SecretComponent implements OnInit {
     this.userName = name ? name : 'Guest';
   }
 
-  // Show quiz modal and fetch quiz questions based on the selected quiz category
-  /*showQuiz(quiz: Quiz) {
-    this.selectedQuiz = quiz;
-    this.loading = true;
-
-    axios.get(`https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple&category=${quiz.id}`)
-      .then(response => {
-        this.fetchedQuestions = response.data.results;
-        this.openQuizModal(); // Open the Angular Material dialog modal
-        this.loading = false;
-      })
-      .catch(error => {
-        console.error('Error fetching questions:', error);
-        this.loading = false;
-      });
-  }*/
-
   // Open the quiz modal (Angular Material dialog)
-  openQuizModal() {
-    this.dialog.open(ModalComponent, {
-      data: this.fetchedQuestions, // Pass the questions data to the modal
-      width: '600px',
-    });
-  }
+  openQuizModal(quiz: Quiz) {
+  const quizUrl = `https://opentdb.com/api.php?amount=10&difficulty=easy&type=multiple&category=${10}`;
+
+  this.dialog.open(ModalComponent, {
+    data: { quizUrl }, // Pass the URL to the modal component
+    width: '600px',
+  });
+}
 
 }

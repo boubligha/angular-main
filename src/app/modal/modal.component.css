@@ -97,6 +97,7 @@
   color: #333;
 }
 
+
 /* Dialog Content Container */
 mat-dialog-content {
   position: relative;
@@ -138,3 +139,101 @@ mat-dialog-actions {
   justify-content: flex-end;
   padding: 10px;
 }
+.choice-container:focus, .choice-container:hover {
+  outline: none;
+  border-color: #6a11cb;
+  background: #f0f7ff;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.choice-text:focus {
+  outline: 2px solid #6a11cb;
+}
+#hud {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 10px;
+  color: white;
+}
+
+#hud-item {
+  margin: 0 10px;
+}
+
+#progressBar {
+  width: 100%;
+  background-color: #555;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#progressBarFull {
+  height: 100%;
+  background-color: green;
+}
+
+.hud-prefix {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.hud-main-text {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#micro-icon {
+  width: 30px;
+  height: auto;
+}
+/* Add these styles to your existing CSS */
+#progressBar {
+  position: relative;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 10px auto;
+  width: 100%;
+  height: 20px;
+}
+
+#progressBarFull {
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  height: 100%;
+  width: 0;
+  transition: width 0.3s ease;
+}
+
+.hud-prefix {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #666;
+}
+
+.hud-main-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+}
+
+#hud {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+#hud-item {
+  flex: 1;
+}
+
+
+
