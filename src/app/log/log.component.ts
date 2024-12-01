@@ -1,20 +1,13 @@
+
 import { Component, OnInit, Inject, PLATFORM_ID, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { isPlatformBrowser } from '@angular/common';
-
-declare global {
-  interface Window {
-    SpeechRecognition: any;
-    webkitSpeechRecognition: any;
-  }
-}
-
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  selector: 'app-log',
+  templateUrl: './log.component.html',
+  styleUrl: './log.component.css'
 })
-export class LoginComponent implements OnInit, OnDestroy {
+export class LogComponent {
   private recognition: any;
   spokenWords: string = '';
   email: string = '';

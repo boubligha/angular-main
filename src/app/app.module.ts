@@ -27,7 +27,8 @@ import { NotificationComponent } from './notification/notification.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 import { AboutComponent } from './about/about.component';
-import { NgChartsModule } from 'ng2-charts'; 
+import { NgChartsModule } from 'ng2-charts';
+import { LogComponent } from './log/log.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +40,7 @@ import { NgChartsModule } from 'ng2-charts';
     NotificationComponent,
     MotivationDialogComponent,
     AboutComponent,
+    LogComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { SecretComponent } from './secret/secret.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AboutComponent } from './about/about.component';
+import { LogComponent } from './log/log.component';
 
 
 const routes: Routes = [
@@ -14,7 +15,7 @@ const routes: Routes = [
   {path:'profile', component:ProfileComponent},
   { path: '', redirectTo: '/login', pathMatch: 'full' }, // Route par défaut
   {path:'about', component:AboutComponent},//contact
-  {path:'about', component:AboutComponent},
+  {path:'log', component:LogComponent},
 ];
 
 @NgModule({
