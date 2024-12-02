@@ -5,6 +5,7 @@ body {
   font-family: 'Arial', sans-serif;
   background-color: #f4f4f9;
   color: #333;
+  line-height: 1.6;
 }
 
 a {
@@ -18,7 +19,7 @@ ul {
   margin: 0;
 }
 
-h2, h1, p {
+h1, h2, p {
   margin: 0;
 }
 
@@ -28,12 +29,12 @@ h2, h1, p {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #0078d4;
   color: white;
+  font-size:30px;
 }
 
 .navbar .logo {
-  font-size: 24px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: 2px;
 }
@@ -53,154 +54,72 @@ h2, h1, p {
   color: #ffcb05;
 }
 
-/* Robot Speech */
 .robot-speech {
-  background-color:#0078d4;
-  padding: 20px;
+
+  padding: 50px;
   border-radius: 10px;
-  text-align: center;
-  margin: 20px auto;
-  max-width: 600px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 20s ease-in-out infinite alternate;
-  color: #ffff;
+  text-align: left; /* Change le texte pour qu'il soit aligné à gauche */
+  margin: 20px 0; /* Supprime l'auto-centrage */
+  max-width: 500px; /* Réduit la largeur pour mieux s'adapter */
+ 
+  animation: fadeIn 3s  infinite alternate;
+  color: #fff;
+  /* Nouvelle mise en page */
+  float: left; /* Aligne le div à gauche */
+  margin-left: 20px; /* Ajoute un espacement sur la gauche */
 }
+
 
 .robot-speech p {
   font-size: 18px;
-
+  margin-bottom: 20px;
   line-height: 1.5;
 }
 
 .robot-speech button {
   padding: 10px 20px;
-  background-color: #e3eff8;
+
   color: rgb(24, 12, 12);
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
-
+  transition:  0.3s;
 }
 
 .robot-speech button:hover {
-  background-color: #ffff;
+ background-color: #ffcb05;
 }
 
+/* Keyframes for Animation */
 @keyframes fadeIn {
   0% {
-    transform: translateX(100%);
+    transform: translateY(70px);
     opacity: 1;
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateY(0px);
     opacity: 1;
   }
-}
-
-
-/* Login Box */
-.login-box {
-  width: 400px;
-  padding: 40px;
-  margin: 50px auto;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-box h2 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: #0078d4;
-}
-
-.input-box {
-  position: relative;
-  margin-bottom: 20px;
-}
-
-.input-box input {
-  width: 100%;
-  padding: 10px 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-}
-
-.input-box input:focus {
-  border-color: #0078d4;
-}
-
-.input-box label {
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  background: white;
-  color: #0078d4;
-  padding: 0 5px;
-  font-size: 14px;
-  pointer-events: none;
-}
-
-.error {
-  color: red;
-  font-size: 12px;
-}
-
-.forgot-pass {
-  text-align: right;
-  margin-top: -10px;
-  font-size: 14px;
-}
-
-.forgot-pass a {
-  color: #0078d4;
-}
-
-.forgot-pass a:hover {
-  text-decoration: underline;
-}
-
-.btn {
-  width: 100%;
-  padding: 10px;
-  background-color: #0078d4;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #005a9e;
-}
-
-.signup-link {
-  text-align: center;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-.signup-link a {
-  color: #0078d4;
-  font-weight: bold;
-}
-
-.signup-link a:hover {
-  text-decoration: underline;
 }
 
 /* About Section */
 .about-container {
-  margin: 50px auto;
+  margin: 500px auto;
   padding: 20px;
-  max-width: 800px;
+  max-width: 1000px;
   text-align: center;
   background-color: #f9fafc;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Background */
+.main {
+  background-image: url('../back.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
 }

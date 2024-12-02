@@ -19,7 +19,7 @@ interface Quiz {
 export class SecretComponent implements OnInit {
   categories: any[] = [];
   selectedQuiz: Quiz | null = null;
-  userName: string = 'Guest';
+  userName: string = 'salma';
   fetchedQuestions: any[] = [];
   loading: boolean = false;
 
@@ -37,8 +37,7 @@ export class SecretComponent implements OnInit {
 
   // Initialize the user's name
   initializeUser() {
-    const name = prompt('Please enter your name:', 'Guest');
-    this.userName = name ? name : 'Guest';
+  
   }
 
   // Open the quiz modal (Angular Material dialog)
