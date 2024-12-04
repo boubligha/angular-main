@@ -1,0 +1,14 @@
+<div class="chat-container">
+  <h2 class="chat-header">Apprendre une langue avec Gemini</h2>
+
+  <div class="chat-history" *ngFor="let message of chatHistory">
+    <div class="chat-message" [ngClass]="{'sent': message.from === 'user', 'received': message.from === 'bot'}">
+      <p>{{ message.message }}</p>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <input id="message-input" [(ngModel)]="prompt" placeholder="Posez une question..." />
+    <button id="send-button" (click)="sendData()" [disabled]="loading || !prompt.trim()">Envoyer</button>
+  </div>
+</div>

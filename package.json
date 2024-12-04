@@ -23,6 +23,7 @@
     "@angular/platform-server": "^18.2.0",
     "@angular/router": "^18.2.0",
     "@angular/ssr": "^18.2.11",
+    "@google/generative-ai": "^0.21.0",
     "@swimlane/ngx-charts": "^21.0.0",
     "angularapp": "file:",
     "axios": "^1.7.7",

@@ -28,7 +28,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 import { AboutComponent } from './about/about.component';
 import { NgChartsModule } from 'ng2-charts';
-import { LogComponent } from './log/log.component'; 
+import { LogComponent } from './log/log.component';
+import { LearnlanguageComponent } from './learn-language/learn-language.component'; 
 @NgModule({
   declarations: [
     AppComponent,
@@ -41,8 +42,11 @@ import { LogComponent } from './log/log.component';
     MotivationDialogComponent,
     AboutComponent,
     LogComponent,
+    LearnlanguageComponent,
   ],
   imports: [
+    FormsModule, // Import nécessaire
+    CommonModule,
     BrowserModule,
     CommonModule,
     AppRoutingModule,
