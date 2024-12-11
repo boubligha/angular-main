@@ -1,4 +1,9 @@
-<div class="chat-container">
+
+<div class="robot-speech">
+  <p>Hello! Welcome to the Quiz App. Here, you can test your languages (French, English...) and scientific subjects like Mathematics and more.</p>
+  <button (click)="startRecognition()">Start Speech Recognition</button>
+</div>
+<!--<div class="chat-container">
   <div *ngFor="let message of chatHistory">
     <div [class]="message.from === 'user' ? 'user-message' : 'bot-message'">
       {{ message.message }}
@@ -8,4 +13,6 @@
 <div class="input-container">
   <button (click)="startListening()" [disabled]="loading">🎤 Start Listening</button>
   <button (click)="sendData()" [disabled]="loading">Send</button>
-</div>
+</div>-->
+
+

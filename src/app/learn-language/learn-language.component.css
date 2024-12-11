@@ -1,32 +1,186 @@
-.chat-container {
-  max-width: 600px;
-  margin: auto;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  height: 400px;
-  overflow-y: scroll;
-  background-color: #f9f9f9;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f293a;
+    /* background-image: url(./bg.jpg); */
+}
+.container {
+    position: relative;
+    width: 256px;
+    height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container span {
+    position: absolute;
+    left: 0;
+    width: 32px;
+    height: 6px;
+    background: #2c4766;
+    border-radius: 8px;
+    transform-origin: 128px;
+    transform: scale(2.2) rotate(calc(var(--i) * (360deg / 50)));
+    animation: animateBlink 3s linear infinite;
+    animation-delay: calc(var(--i) * (3s / 50));
+}
+@keyframes animateBlink {
+    0% {
+        background: #0ef;
+    }
+    25% {
+        background: #2c4766;
+    }
+}
+.login-box {
+    position: absolute;
+    width: 400px;
+}
+.login-box form {
+    width: 100%;
+    padding: 0 50px;
+}
+h2 {
+    font-size: 2em;
+    color: #0ef;
+    text-align: center;
+}
+.input-box {
+    position: relative;
+    margin: 25px 0;
+}
+.input-box input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: 2px solid #2c4766;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 20px;
+    transition: .5s ease;
+}
+.input-box input:focus,
+.input-box input:valid {
+    border-color: #0ef;
+}
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s ease;
+}
+.input-box input:focus~label,
+.input-box input:valid~label {
+    top: 1px;
+    font-size: .8em;
+    background: #1f293a;
+    padding: 0 6px;
+    color: #0ef;
+}
+.forgot-pass {
+    margin: -15px 0 10px;
+    text-align: center;
+}
+.forgot-pass a {
+    font-size: .85em;
+    color: #fff;
+    text-decoration: none;
+}
+.forgot-pass a:hover {
+    text-decoration: underline;
+}
+.btn {
+    width: 100%;
+    height: 45px;
+    background: #0ef;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 1em;
+    color: #1f293a;
+    font-weight: 600;
+}
+.signup-link {
+    margin: 20px 0 10px;
+    text-align: center;
+}
+.signup-link a {
+    font-size: 1em;
+    color: #0ef;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup-link a:hover {
+    text-decoration: underline;
 }
 
-.user-message {
-  text-align: right;
-  padding: 10px;
-  margin: 5px;
-  background-color: #dcf8c6;
-  border-radius: 10px;
+body {
+    background: url('https://p.turbosquid.com/ts-thumb/Hw/tlqDzk/cO/cuterobot_0000/jpg/1622119901/1920x1080/fit_q87/481d5a83e0ca5b76285fdfd2d73afa57aaf52785/cuterobot_0000.jpg') repeat; /* Replace 'your-background-image.jpg' with your actual background image URL */
+    background-size: cover;
+    animation: moveBackground 10s linear infinite;
 }
 
-.bot-message {
-  text-align: left;
-  padding: 10px;
-  margin: 5px;
-  background-color: #fff;
-  border-radius: 10px;
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
-.input-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
+/* Style for the robot's speech bubble */
+.robot-speech {
+    position: absolute;
+    top: 20px; /* Position it near the top left corner */
+    left: 20px; /* Adjust this to move the speech bubble near the robot */
+    max-width: 300px;
+    background: #fff;
+    color: #1f293a;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 0.9em;
+    opacity: 0; /* Start hidden */
+    animation: showSpeech 3s ease forwards;
 }
+
+/* Animation to make the speech appear */
+@keyframes showSpeech {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Arrow for the speech bubble */
+.robot-speech::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 20px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #fff transparent;
+}
+
