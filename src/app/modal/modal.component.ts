@@ -42,42 +42,30 @@ export class ModalComponent implements OnInit {
     console.log('Quiz URL:', this.quizUrl);
     this.loadQuestions();
   }
-
   loadQuestions() {
     fetch(this.quizUrl || 'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple')
       .then((res) => res.json())
       .then((loadedQuestions) => {
         console.log('Loaded Questions:', loadedQuestions);
         this.questions = loadedQuestions.results.map((loadedQuestion: any) => {
+          // Ne pas mélanger les réponses
           const formattedQuestion: Question = {
             question: loadedQuestion.question,
-            answer: Math.floor(Math.random() * 4) + 1,
+            answer: 4, // Fixer la bonne réponse à la 4ème position
             choice1: loadedQuestion.incorrect_answers[0],
             choice2: loadedQuestion.incorrect_answers[1],
             choice3: loadedQuestion.incorrect_answers[2],
             choice4: loadedQuestion.correct_answer,
           };
-
-          const choices = [
-            formattedQuestion.choice1,
-            formattedQuestion.choice2,
-            formattedQuestion.choice3,
-            formattedQuestion.choice4
-          ];
-
-          for (let i = choices.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [choices[i], choices[j]] = [choices[j], choices[i]];
-          }
-
-          [formattedQuestion.choice1, formattedQuestion.choice2, formattedQuestion.choice3, formattedQuestion.choice4] = choices;
-
+  
           return formattedQuestion;
         });
         this.startGame();
       })
       .catch((err) => console.error('Error loading questions:', err));
   }
+  
+  
 
   startGame() {
     this.questionCounter = 0;
@@ -147,21 +135,47 @@ export class ModalComponent implements OnInit {
       scoreElement.innerText = String(this.score);
     }
   }
-
   onChoiceSelected(event: any) {
     if (!this.acceptingAnswers) return;
     this.acceptingAnswers = false;
-
+  
     const selectedChoice = event.target;
     const selectedAnswer = parseInt(selectedChoice.dataset['number'], 10);
-    const isCorrect = selectedAnswer === this.currentQuestion.answer;
-
-    if (isCorrect) {
-      this.incrementScore(10);
+  
+    const correctAnswer = this.currentQuestion.answer;
+  
+    // Vérification si la réponse sélectionnée est correcte
+    if (selectedAnswer === correctAnswer) {
+      selectedChoice.classList.add('correct'); // Mettre la bonne réponse en vert
+      this.incrementScore(10);  // Ajouter des points
+    } else {
+      selectedChoice.classList.add('incorrect'); // Mettre la mauvaise réponse en rouge
     }
-
-    this.getNewQuestion();
+  
+    // Afficher la réponse correcte même si l'utilisateur a fait une erreur
+    const choices = Array.from(document.getElementsByClassName('choice-text')) as HTMLElement[];
+  
+    // Trouver la bonne réponse dans les choix et appliquer la classe 'correct'
+    const correctChoice = choices.find(choice => {
+      const choiceNumber = choice.dataset['number'];
+      return choiceNumber && parseInt(choiceNumber, 10) === correctAnswer;
+    });
+  
+    if (correctChoice) {
+      correctChoice.classList.add('correct'); // Mettre la bonne réponse en vert
+    }
+  
+    // Passer à la question suivante après un délai
+    setTimeout(() => {
+      this.getNewQuestion(); // Charger la prochaine question
+      choices.forEach(choice => {
+        choice.classList.remove('correct', 'incorrect'); // Réinitialiser les classes
+      });
+    }, 1000);
   }
+  
+    
+  
 
   incrementScore(num: number) {
     this.score += num;
