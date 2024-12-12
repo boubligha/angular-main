@@ -24,16 +24,17 @@ import { ModalComponent } from './modal/modal.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ModefierPasswdComponent } from './sous_composants/modefier-passwd/modefier-passwd.component';
 import { NotificationComponent } from './notification/notification.component';
-import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 import { AboutComponent } from './about/about.component';
 import { NgChartsModule } from 'ng2-charts';
 import { LogComponent } from './log/log.component';
 import { LearnlanguageComponent } from './learn-language/learn-language.component'; 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
+  
     SecretComponent,
     ModalComponent,
     ProfileComponent,
@@ -45,13 +46,11 @@ import { LearnlanguageComponent } from './learn-language/learn-language.componen
     LearnlanguageComponent,
   ],
   imports: [
-    FormsModule, // Import nécessaire
     CommonModule,
     BrowserModule,
-    CommonModule,
     AppRoutingModule,
     RouterModule,
-    FormsModule,
+    FormsModule, // Import nécessaire
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
@@ -61,12 +60,9 @@ import { LearnlanguageComponent } from './learn-language/learn-language.componen
     MatIconModule,
     MatListModule,
     MatSlideToggleModule,
-    RegisterComponent,
     NgChartsModule,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

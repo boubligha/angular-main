@@ -36,17 +36,8 @@
     margin: 0;
   }
   
-  .about-container ul li {
-    font-size: 1.1em;
-    color: #444;
-    margin: 10px 0;
-  }
   
-  .about-container ul li::before {
-    content: '✔️';
-    color: #28a745;
-    margin-right: 10px;
-  }
+ 
   
   /* Mission section */
   .mission {

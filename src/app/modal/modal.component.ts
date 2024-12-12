@@ -1,5 +1,8 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog'; // Import MatDialog
+import { MotivationDialogComponent } from '../motivation-dialog/motivation-dialog.component';
 
 interface Question {
   question: string;
@@ -8,7 +11,7 @@ interface Question {
   choice2: string;
   choice3: string;
   choice4: string;
-  [key: string]: string | number; // This allows dynamic properties
+  [key: string]: string | number;
 }
 
 @Component({
@@ -29,7 +32,9 @@ export class ModalComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private router: Router,
+    private dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
@@ -46,14 +51,13 @@ export class ModalComponent implements OnInit {
         this.questions = loadedQuestions.results.map((loadedQuestion: any) => {
           const formattedQuestion: Question = {
             question: loadedQuestion.question,
-            answer: Math.floor(Math.random() * 4) + 1, // Randomize the answer position
+            answer: Math.floor(Math.random() * 4) + 1,
             choice1: loadedQuestion.incorrect_answers[0],
             choice2: loadedQuestion.incorrect_answers[1],
             choice3: loadedQuestion.incorrect_answers[2],
-            choice4: loadedQuestion.correct_answer, // Correct answer inserted at random position
+            choice4: loadedQuestion.correct_answer,
           };
 
-          // Shuffle the choices so that correct answer isn't always at the same position
           const choices = [
             formattedQuestion.choice1,
             formattedQuestion.choice2,
@@ -61,13 +65,11 @@ export class ModalComponent implements OnInit {
             formattedQuestion.choice4
           ];
 
-          // Shuffle choices array
           for (let i = choices.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [choices[i], choices[j]] = [choices[j], choices[i]]; // Swap elements
+            [choices[i], choices[j]] = [choices[j], choices[i]];
           }
 
-          // Reassign the shuffled choices to the formattedQuestion
           [formattedQuestion.choice1, formattedQuestion.choice2, formattedQuestion.choice3, formattedQuestion.choice4] = choices;
 
           return formattedQuestion;
@@ -87,13 +89,20 @@ export class ModalComponent implements OnInit {
   getNewQuestion() {
     if (this.availableQuestions.length === 0 || this.questionCounter >= this.totalQuestions) {
       localStorage.setItem('mostRecentScore', this.score.toString());
+      console.log(this.score);
+
+      // Pass the score to the MotivationDialogComponent using 'data'
+      this.dialog.open(MotivationDialogComponent, {
+        width: '400px',
+        data: { score: this.score } // Pass data through the `data` property
+      });
+
       return this.dialogRef.close();
     }
 
     this.questionCounter++;
     this.currentQuestion = this.availableQuestions[Math.floor(Math.random() * this.availableQuestions.length)];
     this.availableQuestions = this.availableQuestions.filter((q: Question) => q !== this.currentQuestion);
-
     this.updateUI();
     this.acceptingAnswers = true;
   }
@@ -106,26 +115,22 @@ export class ModalComponent implements OnInit {
       questionText.innerText = this.currentQuestion.question;
     }
 
-    // Set choices for each of the choice elements
     choices[0].innerText = this.currentQuestion.choice1;
     choices[1].innerText = this.currentQuestion.choice2;
     choices[2].innerText = this.currentQuestion.choice3;
     choices[3].innerText = this.currentQuestion.choice4;
 
-    // Convert the choices into data-number attributes for comparison later
     choices[0].dataset['number'] = String(1);
     choices[1].dataset['number'] = String(2);
     choices[2].dataset['number'] = String(3);
     choices[3].dataset['number'] = String(4);
 
-    // Update the progress bar
     this.progressPercentage = (this.questionCounter / this.totalQuestions) * 100;
     const progressBarFull = document.getElementById('progressBarFull');
     if (progressBarFull) {
       progressBarFull.style.width = `${this.progressPercentage}%`;
     }
 
-    // Update the HUD elements
     const currentQuestionElement = document.getElementById('currentQuestion');
     const totalQuestionsElement = document.getElementById('totalQuestions');
     const scoreElement = document.getElementById('score');
@@ -149,17 +154,13 @@ export class ModalComponent implements OnInit {
 
     const selectedChoice = event.target;
     const selectedAnswer = parseInt(selectedChoice.dataset['number'], 10);
-    const classToApply = selectedAnswer === this.currentQuestion.answer ? 'correct' : 'incorrect';
+    const isCorrect = selectedAnswer === this.currentQuestion.answer;
 
-    if (classToApply === 'correct') {
+    if (isCorrect) {
       this.incrementScore(10);
     }
 
-    selectedChoice.parentElement.classList.add(classToApply);
-    setTimeout(() => {
-      selectedChoice.parentElement.classList.remove(classToApply);
-      this.getNewQuestion(); // Proceed to the next question after 1 second
-    }, 1000);
+    this.getNewQuestion();
   }
 
   incrementScore(num: number) {
