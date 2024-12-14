@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog'; // Import MatDialog
+import { MatDialog } from '@angular/material/dialog';
 import { MotivationDialogComponent } from '../motivation-dialog/motivation-dialog.component';
 
 interface Question {
@@ -39,7 +39,6 @@ export class ModalComponent implements OnInit {
 
   ngOnInit(): void {
     this.quizUrl = this.data.quizUrl;
-    console.log('Quiz URL:', this.quizUrl);
     this.loadQuestions();
   }
 
@@ -47,7 +46,6 @@ export class ModalComponent implements OnInit {
     fetch(this.quizUrl || 'https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple')
       .then((res) => res.json())
       .then((loadedQuestions) => {
-        console.log('Loaded Questions:', loadedQuestions);
         this.questions = loadedQuestions.results.map((loadedQuestion: any) => {
           const formattedQuestion: Question = {
             question: loadedQuestion.question,
@@ -89,12 +87,9 @@ export class ModalComponent implements OnInit {
   getNewQuestion() {
     if (this.availableQuestions.length === 0 || this.questionCounter >= this.totalQuestions) {
       localStorage.setItem('mostRecentScore', this.score.toString());
-      console.log(this.score);
-
-      // Pass the score to the MotivationDialogComponent using 'data'
       this.dialog.open(MotivationDialogComponent, {
         width: '400px',
-        data: { score: this.score } // Pass data through the `data` property
+        data: { score: this.score }
       });
 
       return this.dialogRef.close();
@@ -102,7 +97,7 @@ export class ModalComponent implements OnInit {
 
     this.questionCounter++;
     this.currentQuestion = this.availableQuestions[Math.floor(Math.random() * this.availableQuestions.length)];
-    this.availableQuestions = this.availableQuestions.filter((q: Question) => q !== this.currentQuestion);
+    this.availableQuestions = this.availableQuestions.filter(q => q !== this.currentQuestion);
     this.updateUI();
     this.acceptingAnswers = true;
   }
@@ -169,5 +164,84 @@ export class ModalComponent implements OnInit {
 
   onClose(): void {
     this.dialogRef.close();
+  }
+
+  startVoiceRecognition() {
+    const recognition = new (window as any).webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.interimResults = false;
+    recognition.maxAlternatives = 1;
+
+    recognition.onresult = (event: any) => {
+      const voiceInput = event.results[0][0].transcript;
+      document.getElementById('voiceInput')!.innerText = `You said: ${voiceInput}`;
+      this.startCountdown(voiceInput);
+    };
+
+    recognition.onspeechend = () => {
+      recognition.stop();
+    };
+
+    recognition.onerror = (event: any) => {
+      console.error('Error occurred in recognition: ' + event.error);
+    };
+
+    recognition.start();
+  }
+
+  startCountdown(voiceInput: string) {
+    let countdown = 3;
+    const countdownElement = document.getElementById('voiceInput')!;
+    const interval = setInterval(() => {
+      countdownElement.innerText = `You said: ${voiceInput} (Checking in ${countdown}...)`;
+      countdown--;
+      if (countdown < 0) {
+        clearInterval(interval);
+        this.checkVoiceAnswer(voiceInput);
+      }
+    }, 1000);
+  }
+
+  checkVoiceAnswer(voiceInput: string) {
+    const correctAnswerText = this.getChoiceText(this.currentQuestion.answer);
+    if (this.isAnswerClose(voiceInput, correctAnswerText)) {
+      this.incrementScore(10);
+    }
+    this.getNewQuestion();
+  }
+
+  getChoiceText(answerNumber: number): string {
+    switch (answerNumber) {
+      case 1: return this.currentQuestion.choice1;
+      case 2: return this.currentQuestion.choice2;
+      case 3: return this.currentQuestion.choice3;
+      case 4: return this.currentQuestion.choice4;
+      default: return '';
+    }
+  }
+
+  isAnswerClose(voiceInput: string, correctAnswerText: string): boolean {
+    return this.levenshteinDistance(voiceInput.toLowerCase(), correctAnswerText.toLowerCase()) <= 2;
+  }
+
+  levenshteinDistance(a: string, b: string): number {
+    const matrix = [];
+    let i, j;
+    for (i = 0; i <= b.length; i++) {
+      matrix[i] = [i];
+    }
+    for (j = 0; j <= a.length; j++) {
+      matrix[0][j] = j;
+    }
+    for (i = 1; i <= b.length; i++) {
+      for (j = 1; j <= a.length; j++) {
+        if (b.charAt(i - 1) == a.charAt(j - 1)) {
+          matrix[i][j] = matrix[i - 1][j - 1];
+        } else {
+          matrix[i][j] = Math.min(matrix[i - 1][j - 1] + 1, Math.min(matrix[i][j - 1] + 1, matrix[i - 1][j] + 1));
+        }
+      }
+    }
+    return matrix[b.length][a.length];
   }
 }

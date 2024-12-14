@@ -2,9 +2,7 @@
 <div mat-dialog-content>
   <div id="hud">
     <div id="hud-item">
-      <p id="progressText" class="hud-prefix">
-        Question
-      </p>
+      <p id="progressText" class="hud-prefix">Question</p>
       <p class="hud-main-text">
         <span id="currentQuestion">1</span>/<span id="totalQuestions">10</span>
       </p>
@@ -30,9 +28,10 @@
     <p class="choice-prefix">D</p>
     <p class="choice-text" data-number="4" (click)="onChoiceSelected($event)">Choice 4</p>
   </div>
-  
+
   <div class="micro-icon-container">
-    <mat-icon>mic</mat-icon> <!-- Microphone icon -->
+      <mat-icon (click)="startVoiceRecognition()">mic</mat-icon> <!-- Microphone icon -->
+    <p id="voiceInput"></p>
   </div>
 </div>
 <div id="progressBar">

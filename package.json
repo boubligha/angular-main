@@ -25,6 +25,7 @@
     "@angular/ssr": "^18.2.11",
     "@google/generative-ai": "^0.21.0",
     "@swimlane/ngx-charts": "^21.0.0",
+    "angular-highcharts": "^17.0.1",
     "angularapp": "file:",
     "axios": "^1.7.7",
     "chart.js": "^3.9.1",
