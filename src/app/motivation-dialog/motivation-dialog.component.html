@@ -6,9 +6,9 @@
         <p>Votre score : {{ score }}</p>
       
         <div class="motivation-message">
-          <h2 *ngIf="score >= 80">Excellent! Vous êtes un maître du quiz!</h2>
+          <h2 *ngIf="score >= 00">Excellent! Vous êtes un maître du quiz!</h2>
           <h2 *ngIf="score >= 50 && score < 80">Bravo! Continuez comme ça!</h2>
-          <h2 *ngIf="score < 50">Ne vous inquiétez pas! Vous vous améliorez à chaque essai!</h2>
+          <h2 *ngIf="score < 00">Ne vous inquiétez pas! Vous vous améliorez à chaque essai!</h2>
         </div>
       
         <button mat-button (click)="downloadCard()">Télécharger la carte de motivation</button>

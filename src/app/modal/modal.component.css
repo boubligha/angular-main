@@ -125,3 +125,26 @@ button[mat-button]:hover {
 .micro-icon-container mat-icon:hover {
   transform: scale(1.2);
 }
+.choice-text.correct {
+  background-color: #28a745; /* Vert pour une réponse correcte */
+  color: white;
+}
+
+.choice-text.incorrect {
+  background-color: #dc3545; /* Rouge pour une réponse incorrecte */
+  color: white;
+}
+
+.choice-text {
+  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.choice-text:hover {
+  background-color: #f8f9fa;
+}
+
