@@ -1,18 +1,17 @@
-
 <div class="robot-speech">
   <p>Hello! Welcome to the Quiz App. Here, you can test your languages (French, English...) and scientific subjects like Mathematics and more.</p>
   <button (click)="startRecognition()">Start Speech Recognition</button>
 </div>
-<!--<div class="chat-container">
-  <div *ngFor="let message of chatHistory">
-    <div [class]="message.from === 'user' ? 'user-message' : 'bot-message'">
-      {{ message.message }}
-    </div>
-  </div>
+
+<!-- Spinner with flags and button to display the full conversation -->
+<div class="controls">
+  <select (change)="changeLanguage($event)">
+    <option value="fr">🇫🇷 French</option>
+    <option value="de">🇩🇪 German</option>
+    <option value="en">🇺🇸 English</option>
+    <option value="jp">🇯🇵 Japanese</option>
+    <option value="tr">🇹🇷 Turkish</option>
+  </select>
+
+  <button (click)="displayConversation()">Display Full Conversation</button>
 </div>
-<div class="input-container">
-  <button (click)="startListening()" [disabled]="loading">🎤 Start Listening</button>
-  <button (click)="sendData()" [disabled]="loading">Send</button>
-</div>-->
-
-
