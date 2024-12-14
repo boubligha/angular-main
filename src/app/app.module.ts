@@ -28,7 +28,8 @@ import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog
 import { AboutComponent } from './about/about.component';
 import { NgChartsModule } from 'ng2-charts';
 import { LogComponent } from './log/log.component';
-import { LearnlanguageComponent } from './learn-language/learn-language.component'; 
+import { LearnlanguageComponent } from './learn-language/learn-language.component';
+import { ContactComponent } from './contact/contact.component'; 
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { LearnlanguageComponent } from './learn-language/learn-language.componen
     AboutComponent,
     LogComponent,
     LearnlanguageComponent,
+    ContactComponent,
   ],
   imports: [
     CommonModule,

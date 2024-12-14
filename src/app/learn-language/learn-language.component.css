@@ -1,65 +1,91 @@
-.robot-speech {
-    position: absolute;
-    top: 20px; /* Position it near the top left corner */
-    left: 20px; /* Adjust this to move the speech bubble near the robot */
-    max-width: 300px;
-    background: #fff;
-    color: #1f293a;
-    padding: 10px 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-size: 0.9em;
-    opacity: 0; /* Start hidden */
-    animation: showSpeech 3s ease forwards;
-  }
-  
-  /* Animation to make the speech appear */
-  @keyframes showSpeech {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  /* Optional: Arrow for the speech bubble */
-  .robot-speech::after {
-    content: "";
-    position: absolute;
-    bottom: 100%;
-    left: 20px;
-    border-width: 10px;
-    border-style: solid;
-    border-color: transparent transparent #fff transparent;
-  }
-  
-  .controls {
-    position: absolute;
-    top: 20px; /* Align with the speech bubble */
-    left: 350px; /* Position to the right of the speech bubble */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body {
     display: flex;
-    flex-direction: column; /* Arrange elements vertically */
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1f293a;
+    /* background-image: url(./bg.jpg); */
+}.robot-speech {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  max-width: 300px;
+  background: #fff;
+  color: #1f293a;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 0.9em;
+  opacity: 0;
+  animation: showSpeech 3s ease forwards;
+}
+
+@keyframes showSpeech {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
   }
-  
-  select {
-    margin: 10px 0; /* Add vertical margin */
-    padding: 5px;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  button {
-    margin: 10px 0; /* Add vertical margin */
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+}
+
+.robot-speech::after {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 20px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+}
+
+.controls {
+  position: absolute;
+  top: 20px;
+  left: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+select {
+  margin: 10px 0;
+  padding: 5px;
+}
+
+button {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+body {
+  background: url('https://p.turbosquid.com/ts-thumb/Hw/tlqDzk/cO/cuterobot_0000/jpg/1622119901/1920x1080/fit_q87/481d5a83e0ca5b76285fdfd2d73afa57aaf52785/cuterobot_0000.jpg') repeat;
+  background-size: cover;
+  animation: moveBackground 10s linear infinite;
+}
+
+@keyframes moveBackground {
+  0% {
+    background-position: 0 0;
   }
-  
-  button:hover {
-    background-color: #0056b3;
+  100% {
+    background-position: 100% 100%;
   }
-  
+}
