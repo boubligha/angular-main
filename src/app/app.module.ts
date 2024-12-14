@@ -29,7 +29,8 @@ import { AboutComponent } from './about/about.component';
 import { NgChartsModule } from 'ng2-charts';
 import { LogComponent } from './log/log.component';
 import { LearnlanguageComponent } from './learn-language/learn-language.component';
-import { ContactComponent } from './contact/contact.component'; 
+import { ContactComponent } from './contact/contact.component';
+import { LanguageGameComponent } from './language-game/language-game.component'; 
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { ContactComponent } from './contact/contact.component';
     LogComponent,
     LearnlanguageComponent,
     ContactComponent,
+    LanguageGameComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,32 @@
+<div class="game-container">
+    <h2>Language Learning Game</h2>
+    <div class="score">
+      <p>Score: {{ score }}</p>
+    </div>
+    <div class="question" *ngIf="!gameOver">
+      <p>What is the translation of <strong>{{ currentWord }}</strong> in Spanish?</p>
+    </div>
+  
+    <div class="choices" *ngIf="!gameOver">
+      <button *ngFor="let choice of choices" 
+              (click)="selectedAnswer = choice" 
+              [class.selected]="selectedAnswer === choice">
+        {{ choice }}
+      </button>
+    </div>
+  
+    <div class="feedback">
+      <p>{{ feedback }}</p>
+    </div>
+  
+    <div *ngIf="!gameOver">
+      <button class="check-answer-btn" (click)="checkAnswer()" [disabled]="!selectedAnswer">Check Answer</button>
+      <button class="next-question-btn" (click)="nextQuestion()" [disabled]="!selectedAnswer">Next Question</button>
+    </div>
+    
+    <div *ngIf="gameOver">
+      <p>Game Over! Your final score is: {{ score }}</p>
+      <button class="restart-btn" (click)="restartGame()">Restart Game</button>
+    </div>
+  </div>
+  

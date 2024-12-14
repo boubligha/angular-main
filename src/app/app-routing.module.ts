@@ -9,6 +9,7 @@ import { LogComponent } from './log/log.component';
 import { LearnlanguageComponent } from './learn-language/learn-language.component';
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 import { ContactComponent } from './contact/contact.component';
+import { LanguageGameComponent } from './language-game/language-game.component';
 
 
 const routes: Routes = [
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'log', component:LogComponent},
   {path:'learnLanguage', component:LearnlanguageComponent},
   {path:'motivation', component:MotivationDialogComponent},
-  { path: 'contact', component: ContactComponent }
+  { path: 'contact', component: ContactComponent },
+  {path:'LanguageGameComponent', component:LanguageGameComponent}
 
 ];
 
