@@ -1,0 +1,204 @@
+/* Base Styling */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f9fc;
+  }
+  
+  /* Layout structure */
+  .page-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    grid-template-rows: auto 1fr;
+    height: 100vh;
+  }
+  
+  /* Top Navigation Bar */
+  .top-bar {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg,  #2f3b52, #86a3e0);
+    color: #fff;
+    padding: 15px 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .top-bar .logo .website-name {
+    font-size: 1.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .top-bar .search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .top-bar .srch {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 25px 0 0 25px;
+    outline: none;
+    width: 250px;
+    background-color: #fff;
+    color: #333;
+  }
+  
+  .top-bar .btn {
+    padding: 8px 20px;
+    background-color: #fff;
+    color:  #2f3b52; 
+    border: none;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+  }
+  
+  .top-bar .btn:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .top-bar .user-info {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Side Menu */
+  .side-menu {
+    background: linear-gradient(180deg,  #2f3b52,  #86a3e0);
+    color: #fff;
+    padding: 20px;
+  }
+  
+  .side-menu .menu-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .side-menu .menu-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 15px 0;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s, color 0.3s;
+  }
+  
+  .side-menu .menu-item i {
+    font-size: 1.5rem;
+  }
+  
+  .side-menu .menu-item:hover {
+    transform: translateX(10px);
+    color: #2f3b52; 
+  }
+  
+  .side-menu a {
+    color: inherit;
+    text-decoration: none;
+  }
+  
+  /* Main Content */
+  .main-content {
+    background-color: #f7f9fc;
+    padding: 30px;
+    overflow-y: auto;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+
+/* Category Grid */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Grille flexible */
+    gap: 25px; /* Espacement entre les cartes */
+    padding: 20px; /* Ajoute un peu d'espace autour de la grille */
+  }
+  
+  /* Quiz Card Container */
+  .quiz-card-container {
+    display: flex;
+    justify-content: center; /* Centre chaque carte horizontalement */
+  }
+  
+  /* Quiz Card */
+  .quiz-card {
+    background: #fff; /* Fond blanc pour un contraste net */
+    border: none;
+    border-radius: 15px; /* Coins arrondis pour un design moderne */
+    padding: 20px;
+    width: 100%; /* Prend toute la largeur du conteneur */
+    text-align: center; /* Centrer le contenu */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: transform 0.4s, box-shadow 0.4s; /* Animation fluide pour les hover */
+    cursor: pointer; /* Indique que c'est cliquable */
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .quiz-card:hover {
+    transform: scale(1.05); /* Zoom au survol */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Ombre plus prononcée */
+  }
+  
+  .quiz-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #2f3b52, #86a3e0); /* Barre décorative */
+  }
+  
+  /* Quiz Icon (pour personnaliser les icônes dans les cartes) */
+  .quiz-icon i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    color: #86a3e0; /* Couleur bleu doux */
+  }
+  
+  /* Quiz Title (si vous ajoutez des titres dans les cartes) */
+  .quiz-title {
+    font-size: 1.3rem;
+    color: #333;
+    margin: 0;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  
+  .quiz-title:hover {
+    color: #86a3e0; /* Changement de couleur au survol */
+  }
+  
+  /* Main Item (liens dans les cartes) */
+  .main-item {
+    display: block;
+    margin: 10px 0;
+    padding: 12px 15px;
+    text-decoration: none;
+
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: 8px;
+  
+  }
+
+  
+  

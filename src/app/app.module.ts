@@ -31,7 +31,8 @@ import { LogComponent } from './log/log.component';
 import { LearnlanguageComponent } from './learn-language/learn-language.component';
 import { ContactComponent } from './contact/contact.component';
 import { LanguageGameComponent } from './language-game/language-game.component';
-import { CultureGeneraleComponent } from './culture-generale/culture-generale.component'; 
+import { CultureGeneraleComponent } from './culture-generale/culture-generale.component';
+import { PagegameComponent } from './pagegame/pagegame.component'; 
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { CultureGeneraleComponent } from './culture-generale/culture-generale.co
     ContactComponent,
     LanguageGameComponent,
     CultureGeneraleComponent,
+    PagegameComponent,
   ],
   imports: [
     CommonModule,

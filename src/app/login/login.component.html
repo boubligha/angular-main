@@ -12,18 +12,15 @@
        <!-- Lien qui navigue vers la section "About" -->
        <li><a routerLink="#about">ABOUT</a></li>
        <li><a routerLink="/log">LOGIN</a></li>
-
-        <li><a href="#">CONTACT</a></li>
+       <li class="menu-item"><a routerLink="/contact">CONTECT </a></li>
       </ul>
     </div>
     
   </div>
   <div class="robot-speech">
-    <p>Hello! Welcome to the Quiz App. Test your knowledge in languages (French, English...) and scientific subjects like Mathematics and more.</p>
+    <p>Hello! Welcome to the Quiz App. Test your knowledge in languages  and scientific subjects like Mathematics and more.</p>
     <button (click)="startRecognition()">Start Speech Recognition</button>
   </div>
-
-
   <!-- Section About avec un ID pour l'ancre -->
   <div id="about" class="about-container">
     <app-about></app-about>
