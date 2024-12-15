@@ -75,7 +75,7 @@ export class LearnlanguageComponent implements OnInit, OnDestroy {
     this.fullConversation += `AI: ${response}\n`; // Add to conversation
     this.computerSpeech(response);
   }
-
+  //generateText
   computerSpeech(words: string) {
     if (typeof window !== 'undefined') {
       const speech = new SpeechSynthesisUtterance(words);
@@ -91,7 +91,7 @@ export class LearnlanguageComponent implements OnInit, OnDestroy {
 
   async generateDynamicResponse(spokenWords: string): Promise<string> {
     try {
-      const response = await this.geminiService.generateText(this.spokenWords, this.selectedLanguage);
+      const response = await this.geminiService.generateText2(this.spokenWords, this.selectedLanguage);
       return response || "I'm sorry, I couldn't understand that. Could you please repeat?";
     } catch (error) {
       console.error('Error with Gemini service:', error);

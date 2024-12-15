@@ -1,71 +1,136 @@
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #141e30, #243b55);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Welcome Box Styles */
+.welcome-box {
+  background: #1c2331;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.welcome-box h1 {
+  font-size: 32px;
+  color: #89c4f4;
+}
+
 /* Register Box Styles */
 .register-box {
-    width: 100%;
-    max-width: 400px;
-    padding: 40px;
-    margin: 60px auto;
-    background-color: white;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    text-align: left;
-  }
+  width: 100%;
+  max-width: 400px;
+  padding: 30px;
+  margin: 20px;
+  background: #1c2331;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: white;
+}
 
-  .register-box h2 {
-    margin-bottom: 30px;
-    color: #6a11cb;
-  }
-  
-  .input-box {
-    position: relative;
-    margin-bottom: 30px;
-  }
-  
-  .input-box input {
-    width: 100%;
-    padding: 10px;
-    background: #f4f4f4;
-    border: none;
-    outline: none;
-    border-radius: 5px;
-  }
-  
-  .input-box label {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    padding: 10px 0;
-    color: #666;
-    pointer-events: none;
-    transition: 0.5s;
-  }
-  
-  .input-box input:focus ~ label,
-  .input-box input:valid ~ label {
-    top: -20px;
-    left: 10px;
-    color: #6a11cb;
-    font-size: 12px;
-  }
-  
-  .error {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
-  }
-  
-  .btn {
-    width: 100%;
-    background-color: #6a11cb;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #2575fc;
-  }
-  
+.register-box h2 {
+  margin-bottom: 20px;
+  font-size: 26px;
+  color: #89c4f4;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 15px;
+  background: #2a3b4c;
+  border: none;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  transition: 0.3s;
+  color: #ffffff;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  background: #2a3b4c;
+  color: #89c4f4;
+  padding: 0 5px;
+  pointer-events: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+  top: -10px;
+  left: 15px;
+  background: #1c2331;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.error {
+  color: #ff6f61;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.btn {
+  width: 100%;
+  padding: 12px;
+  background: #4a69bd;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background: #3b5998;
+  transform: scale(1.05);
+}
+
+.checkbox-container {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+.gender-selection {
+  margin-bottom: 15px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.gender-selection label {
+  margin-right: 10px;
+  font-size: 14px;
+}
+
+.login-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #4a69bd;
+  text-decoration: none;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+}
