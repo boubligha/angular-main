@@ -1,8 +1,11 @@
 <div class="container">
+    <div class="left-side">
+        <h2>Hello, Welcome!</h2>
+        <button class="register-btn" (click)="navigateToRegister()">Register</button>
+    </div>
     <div class="form-box login">
         <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
             <h1>Login</h1>
-            <p class="welcome-text">Hello, Welcome to Our Site!</p>
             <div class="input-box">
                 <input type="email" name="email" [(ngModel)]="email" required>
                 <label>Email</label>

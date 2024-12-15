@@ -21,6 +21,8 @@ declare global {
   standalone: true
 })
 export class RegisterComponent {
+navigateToLogin() {
+    this.router.navigate(['/log']);}
   registerData = { username: '', password: '' };
   isConfirmed: boolean = false;
   private recognition: any; // Speech recognition instance

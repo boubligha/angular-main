@@ -1,136 +1,157 @@
-/* General Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #141e30, #243b55);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(90deg, #e2e2e2, #c9d6ff);
 }
 
-/* Welcome Box Styles */
-.welcome-box {
-  background: #1c2331;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: white;
-  padding: 20px;
-  margin-bottom: 20px;
+.container {
+    display: flex;
+    width: 800px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .2);
+    overflow: hidden;
+    margin: 20px;
+    margin: auto;
 }
 
-.welcome-box h1 {
-  font-size: 32px;
-  color: #89c4f4;
+.left-side {
+    background: #7494ec;
+    color: #fff;
+    padding: 40px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
-/* Register Box Styles */
-.register-box {
-  width: 100%;
-  max-width: 400px;
-  padding: 30px;
-  margin: 20px;
-  background: #1c2331;
-  border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  color: white;
+.left-side h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
-.register-box h2 {
-  margin-bottom: 20px;
-  font-size: 26px;
-  color: #89c4f4;
+.register-btn {
+    background: #fff;
+    color: #7494ec;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.form-box {
+    width: 50%;
+    padding: 40px;
+    text-align: center;
+    color: #333;
+}
+
+.form-box h1 {
+    font-size: 36px;
+    margin: -10px 0 20px;
 }
 
 .input-box {
-  position: relative;
-  margin-bottom: 20px;
+    position: relative;
+    margin: 30px 0;
 }
 
 .input-box input {
-  width: 100%;
-  padding: 12px 15px;
-  background: #2a3b4c;
-  border: none;
-  border-radius: 25px;
-  outline: none;
-  font-size: 16px;
-  transition: 0.3s;
-  color: #ffffff;
+    width: 100%;
+    padding: 13px 50px 13px 20px;
+    background: #eee;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
 }
 
 .input-box label {
-  position: absolute;
-  top: 50%;
-  left: 15px;
-  transform: translateY(-50%);
-  background: #2a3b4c;
-  color: #89c4f4;
-  padding: 0 5px;
-  pointer-events: none;
-  transition: 0.3s;
-  font-size: 14px;
+    position: absolute;
+    left: 20px;
+    top: -10px;
+    font-size: 14px;
+    color: #888;
 }
 
-.input-box input:focus ~ label,
-.input-box input:valid ~ label {
-  top: -10px;
-  left: 15px;
-  background: #1c2331;
-  color: #ffffff;
-  font-size: 12px;
-}
-
-.error {
-  color: #ff6f61;
-  font-size: 12px;
-  margin-top: 5px;
-}
-
-.btn {
-  width: 100%;
-  padding: 12px;
-  background: #4a69bd;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn:hover {
-  background: #3b5998;
-  transform: scale(1.05);
-}
-
-.checkbox-container {
-  text-align: left;
-  margin-bottom: 15px;
-}
-
-.gender-selection {
-  margin-bottom: 15px;
-  text-align: left;
-  color: #ffffff;
+.input-box i {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .gender-selection label {
-  margin-right: 10px;
-  font-size: 14px;
+    font-size: 16px;
+    color: #333;
+    display: inline-block;
+    margin-right: 20px;
 }
 
-.login-link {
-  margin-top: 15px;
-  font-size: 14px;
-  color: #4a69bd;
-  text-decoration: none;
+.gender-selection input {
+    margin-right: 8px;
 }
 
-.login-link:hover {
-  text-decoration: underline;
+.error {
+    color: #ff0000;
+    font-size: 12px;
+}
+
+.btn {
+    width: 100%;
+    height: 48px;
+    background: #7494ec;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: #fff;
+    font-weight: 600;
+}
+
+.checkbox-container {
+    margin: 20px 0;
+}
+
+.checkbox-container label {
+    font-size: 14.5px;
+    color: #333;
+}
+
+.checkbox-container input {
+    margin-right: 10px;
+}
+
+.login-link a {
+    font-size: 14.5px;
+    color: #333;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.scroll-view {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding: 10px;
 }
