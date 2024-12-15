@@ -30,7 +30,8 @@ import { NgChartsModule } from 'ng2-charts';
 import { LogComponent } from './log/log.component';
 import { LearnlanguageComponent } from './learn-language/learn-language.component';
 import { ContactComponent } from './contact/contact.component';
-import { LanguageGameComponent } from './language-game/language-game.component'; 
+import { LanguageGameComponent } from './language-game/language-game.component';
+import { CultureGeneraleComponent } from './culture-generale/culture-generale.component'; 
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { LanguageGameComponent } from './language-game/language-game.component';
     LearnlanguageComponent,
     ContactComponent,
     LanguageGameComponent,
+    CultureGeneraleComponent,
   ],
   imports: [
     CommonModule,

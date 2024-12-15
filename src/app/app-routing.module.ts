@@ -10,6 +10,7 @@ import { LearnlanguageComponent } from './learn-language/learn-language.componen
 import { MotivationDialogComponent } from './motivation-dialog/motivation-dialog.component';
 import { ContactComponent } from './contact/contact.component';
 import { LanguageGameComponent } from './language-game/language-game.component';
+import { CultureGeneraleComponent } from './culture-generale/culture-generale.component';
 
 
 const routes: Routes = [
@@ -23,7 +24,8 @@ const routes: Routes = [
   {path:'learnLanguage', component:LearnlanguageComponent},
   {path:'motivation', component:MotivationDialogComponent},
   { path: 'contact', component: ContactComponent },
-  {path:'LanguageGameComponent', component:LanguageGameComponent}
+  {path:'LanguageGameComponent', component:LanguageGameComponent},
+  { path: 'culture-generale', component: CultureGeneraleComponent }
 
 ];
 
