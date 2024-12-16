@@ -1,16 +1,82 @@
-<div class="robot-speech">
-  <p>Hello! Welcome to the Quiz App. Here, you can test your languages (French, English...) and scientific subjects like Mathematics and more.</p>
-  <button (click)="startRecognition()">Start Speech Recognition</button>
+<div class="chatbot-container">
+  <!-- Section for the robot avatar or icon -->
+  <div class="chatbot-header">
+    <i class="fa fa-robot" aria-hidden="true"></i>
+    <p class="greeting-text">Hello! Welcome to the Quiz App. Here, you can test your languages (French, English...) and scientific subjects like Mathematics and more.</p>
+  </div>
+
+  <!-- Section to display the conversation -->
+  <div class="conversation">
+    <div *ngFor="let message of conversationMessages">
+      <div class="message bot-message">
+        <span class="message-text">{{ message }}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Input area for commands -->
+  <div class="text-input-container">
+    <input [(ngModel)]="userInput" type="text" placeholder="Type your message..." (keyup.enter)="sendMessage()" />
+    <div class="send-icon" (click)="sendMessage2()">
+      <i class="fa fa-paper-plane" aria-hidden="true"></i>
+    </div>
+    <div class="mic-icon" (click)="startRecognition()">
+      <i class="fa fa-microphone" aria-hidden="true"></i>
+    </div>
+  </div>
 </div>
 
-<!-- Spinner with flags and button to display the full conversation -->
-<div class="controls">
-  <select (change)="changeLanguage($event)">
-    <option value="fr">🇫🇷 French</option>
-    <option value="de">🇩🇪 German</option>
-    <option value="en">🇺🇸 English</option>
-    <option value="jp">🇯🇵 Japanese</option>
-    <option value="tr">🇹🇷 Turkish</option>
-  </select>
-  <button (click)="displayConversation()">Display Full Conversation</button>
-</div>
+
+
+
+
+  <div class="quiz-card-container">
+    <!-- First Card: French -->
+    <div class="quiz-card">
+      <div class="quiz-icon">
+        <i class="fas fa-landmark"></i>
+        <li class="main-item">
+          <a class="quiz-title" (click)="changeLanguage('fr')">🇫🇷 French</a>
+        </li>
+      </div>
+    </div>
+    
+    <!-- Second Card: German -->
+    <div class="quiz-card">
+      <div class="quiz-icon">
+        <i class="fas fa-landmark"></i>
+        <li class="main-item">
+          <a class="quiz-title" (click)="changeLanguage('de')">🇩🇪 German</a>
+        </li>
+      </div>
+    </div>
+    
+    <!-- Third Card: English -->
+    <div class="quiz-card">
+      <div class="quiz-icon">
+        <i class="fas fa-landmark"></i>
+        <li class="main-item">
+          <a class="quiz-title" (click)="changeLanguage('en')">🇺🇸 English</a>
+        </li>
+      </div>
+    </div>
+  
+    <!-- Fourth Card: Japanese -->
+    <div class="quiz-card">
+      <div class="quiz-icon">
+        <i class="fas fa-landmark"></i>
+        <li class="main-item">
+          <a class="quiz-title" (click)="changeLanguage('jp')">🇯🇵 Japanese</a>
+        </li>
+      </div>
+    </div>
+    
+    <!-- Fifth Card: Turkish -->
+    <div class="quiz-card">
+      <div class="quiz-icon">
+        <i class="fas fa-landmark"></i>
+        <li class="main-item">
+          <a class="quiz-title" (click)="changeLanguage('tr')">🇹🇷 Turkish</a>
+        </li>
+      </div>
+  </div>

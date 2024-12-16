@@ -9,21 +9,30 @@ export class GeminiService {
 
   constructor() {
     // Initialize the Gemini AI instance with your API key
-    this.generativeAI = new GoogleGenerativeAI('AIzaSyDqz0ljo7lEKZamkcYxOLT1Uwfw9cABUSE');
+    //
+    //the plde one ("AIzaSyDqz0ljo7lEKZamkcYxOLT1Uwfw9cABUSE")
+    //
+    this.generativeAI = new GoogleGenerativeAI('AIzaSyAwDuIF5D1PeCdhIZE6SQGznM4C18KgRp0');
   }
-  async generateText2(prompt: string, language: string): Promise<string> {
+  async generateText2(question: string, language: string): Promise<string> {
     try {
+      // Initialize the generative model
       const model = this.generativeAI.getGenerativeModel({ model: 'gemini-pro' });
-      //model.generateContent(`Answer in a friendly and conversational manner, like a friend helping me learn ${language}. Engage with follow-up questions and keep the conversation going,don't use special characters like .*+- `);
-      const result = await model.generateContent( `Answer like a friend want me to learnin  ${language}: ${prompt}`);
+  
+      const result = await model.generateContent(`Please provide an insightful and helpful response less than 20 words to the following question in a small paragraph and  don't use special characters like '*+-' and use this language to answer: ${language}: ${question}`);
+  
+      // Extract the response text
       const response = await result.response.text();
       console.log('Gemini response:', response);
-      return response.trim(); // Trim any extra spaces from the response
+  
+      // Return the answer, trimming any extra spaces
+      return response.trim();
     } catch (error) {
       console.error('Error generating text with Gemini:', error);
       return 'Sorry, I encountered an error while processing your request.';
     }
   }
+  
 
   // Helper function to generate content with a specific prompt and language
   async generateText(prompt: string, language: string): Promise<string> {
